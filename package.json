@@ -1,0 +1,34 @@
+{
+  "name": "stoddart-web-engineering",
+  "description": "",
+  "scripts": {
+    "start": "webpack-dev-server --mode=development --port 8080",
+    "build": "webpack --mode=production"
+  },
+  "dependencies": {
+    "@babel/core": "7.2.0",
+    "@babel/plugin-proposal-class-properties": "7.2.1",
+    "@babel/plugin-proposal-export-default-from": "7.2.0",
+    "@babel/plugin-transform-react-jsx": "7.2.0",
+    "@babel/polyfill": "7.0.0",
+    "@babel/preset-env": "7.2.0",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.4",
+    "classnames": "2.2.6",
+    "css-loader": "2.0.0",
+    "eslint": "5.10.0",
+    "file-loader": "2.0.0",
+    "html-webpack-plugin": "3.2.0",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-particles-js": "2.4.2",
+    "react-router-dom": "4.3.1",
+    "react-transition-group": "2.5.0",
+    "style-loader": "0.23.1",
+    "styled-components": "4.1.2",
+    "webpack": "latest",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.10"
+  },
+  "keywords": []
+}
