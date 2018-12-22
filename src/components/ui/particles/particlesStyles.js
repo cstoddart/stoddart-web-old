@@ -8,4 +8,8 @@ export const StyledParticles = styled(Particles)`
   right: 0;
   bottom: 0;
   z-index: 0;
+
+  ${({ secondary }) => secondary && `
+    pointer-events: none;
+  `}
 `;

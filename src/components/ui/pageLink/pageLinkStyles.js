@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import { SITE_WIDTH } from '../../../constants';
+
 export const Container = styled.div`
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: ${(window.innerHeight / 2) - 100}px;
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex
-  align-items: center;
-  width: 65%;
+  width: 100%;
   margin: 0 auto;
   pointer-events: none;
+  display: flex;
+  align-items: flex-start;
 
   ${({ left }) => left ? `
     justify-content: flex-start;
@@ -23,9 +25,10 @@ export const Container = styled.div`
 `;
 
 export const StyledPageLink = styled(Link)`
-  border-bottom: 1px solid #fb1;
+  border-bottom: 2px solid #fb1;
   pointer-events: all;
   user-select: none;
+  font-weight: 600;
 
   ${({ left }) => left ? `
     padding-left: 25px;

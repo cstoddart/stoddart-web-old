@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import { SITE_WIDTH } from '../../../constants'
 
 export const CurrentComponent = styled.div`
-  position: absolute;
+  pointer-events: none;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  pointer-events: none;
 
   ${({ animation }) => {
     if (animation === 'fadeOut') {
@@ -34,29 +33,27 @@ export const CurrentComponent = styled.div`
         return `
           transition: 0.3s ease-out;
           opacity: 0;
+          position: absolute;
         `;
       }
       if (animation === 'toLeft') {
         return `
           transition: 0.3s ease-out;
           transform: translateX(${document.body.scrollWidth * -1}px);
+          position: absolute;
         `;
       }
       if (animation === 'toRight') {
         return `
           transition: 0.3s ease-out;
           transform: translateX(${document.body.scrollWidth}px);
+          position: absolute;
         `;
       }
   }}
 `;
 
 export const EnteringComponent = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   transition: .0.3s ease-out;
   pointer-events: none;
 

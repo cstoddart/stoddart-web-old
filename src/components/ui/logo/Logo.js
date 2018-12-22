@@ -11,7 +11,7 @@ export const Logo = ({ width }) => {
   const secondaryFontSize = width * .1;
 
   return (
-    <StyledLogo>
+    <StyledLogo to="/">
       <Primary fontSize={primaryFontSize}>Stoddart</Primary>
       <Secondary fontSize={secondaryFontSize}>Web Engineering</Secondary>
     </StyledLogo>

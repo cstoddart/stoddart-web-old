@@ -5,9 +5,10 @@ import { Home } from './components/home/Home';
 import { Projects } from './components/projects/Projects';
 import { Services } from './components/services/Services';
 import {
-  AnimatedSwitch,
-  Navigation,
   Particles,
+  Navigation,
+  AnimatedSwitch,
+  Footer,
 } from './components/ui';
 import {
   GlobalStyles,
@@ -19,18 +20,21 @@ export const App = () => (
     <GlobalStyles />
     <Particles />
     <BrowserRouter>
-      <AppContent>
+      <Fragment>
         <Navigation />
-        <Route render={({ location }) => (
-          <AnimatedSwitch location={location}>
-            <Switch location={location}>
-              <Route exact path="/" component={Home} />
-              <Route path="/projects" component={Projects} />
-              <Route path="/services" component={Services} />
-            </Switch>
-          </AnimatedSwitch>
-        )}/>
-      </AppContent>
+        <AppContent>
+          <Route render={({ location }) => (
+            <AnimatedSwitch location={location}>
+              <Switch location={location}>
+                <Route exact path="/" component={Home} />
+                <Route path="/projects" component={Projects} />
+                <Route path="/services" component={Services} />
+              </Switch>
+            </AnimatedSwitch>
+          )}/>
+        </AppContent>
+        <Footer />
+      </Fragment>
     </BrowserRouter>
   </Fragment>
 );

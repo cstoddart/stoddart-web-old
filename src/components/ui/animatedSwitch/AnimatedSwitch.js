@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import { CurrentComponent, EnteringComponent } from './sliderStyles'
+import { CurrentComponent, EnteringComponent } from './animatedSwitchStyles';
 
 const routeAnimations = {
   '/': {

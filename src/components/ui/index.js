@@ -1,5 +1,6 @@
 export { AnimatedSwitch } from './animatedSwitch/AnimatedSwitch';
 export { Button } from './button/Button';
+export { Footer } from './footer/Footer';
 export { Logo } from './logo/Logo';
 export { Navigation } from './navigation/Navigation';
 export { PageContainer } from './pageContainer/PageContainer';

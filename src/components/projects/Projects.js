@@ -13,8 +13,8 @@ export class Projects extends Component {
       <PageContainer>
         <PageContent>
           <PageTitle>Projects</PageTitle>
-          <PageLink to='/' right>Home</PageLink>
         </PageContent>
+        <PageLink to='/' right>Home</PageLink>
       </PageContainer>
     );
   }
