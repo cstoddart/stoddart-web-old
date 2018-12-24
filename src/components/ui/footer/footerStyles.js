@@ -9,6 +9,21 @@ export const StyledFooter = styled.div`
   font-size: 14px;
   margin-bottom: 25px;
   height: 25px;
+  position: relative;
+
+  a {
+    color: white;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  a:first-of-type {
+    margin-right: 5px;
+  }
+
+  a:last-of-type {
+    margin-left: 5px;
+  }
 `;
 
 export const TexasIcon = styled.img`

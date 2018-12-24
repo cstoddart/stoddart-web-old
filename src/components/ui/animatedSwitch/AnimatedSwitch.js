@@ -2,18 +2,24 @@ import React, { Component, Fragment } from 'react';
 
 import { CurrentComponent, EnteringComponent } from './animatedSwitchStyles';
 
-const routeAnimations = {
+const routes = {
   '/': {
-    enter: 'fadeIn',
-    exit: 'fadeOut',
+    leftRoute: '/projects',
+    rightRoute: '/services',
+    enterAnimation: 'fadeIn',
+    exitAnimation: 'fadeOut',
   },
-  '/projects':  {
-    enter: 'fromLeft',
-    exit: 'toLeft',
+  '/projects': {
+    leftRoute: null,
+    rightRoute: '/',
+    enterAnimation: 'fromLeft',
+    exitAnimation: 'toLeft',
   },
   '/services': {
-    enter: 'fromRight',
-    exit: 'toRight',
+    leftRoute: '/',
+    rightRoute: null,
+    enterAnimation: 'fromRight',
+    exitAnimation: 'toRight',
   },
 };
 
@@ -23,20 +29,36 @@ export class AnimatedSwitch extends Component {
     currentComponent: this.props.children,
     enteringComponent: null,
     enterAnimation: null,
-    exitAnimation: routeAnimations[this.props.location.pathname].exit,
+    exitAnimation: routes[this.props.location.pathname].exitAnimation,
+    initialX: 0,
+    translation: 0,
   };
+
+  componentDidMount() {
+    document.addEventListener('touchstart', this.handleTouchStart);
+    document.addEventListener('touchmove', this.handleTouchMove);
+    document.addEventListener('touchend', this.handleTouchEnd);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('touchstart', this.handleTouchStart);
+    document.removeEventListener('touchmove', this.handleTouchMove);
+    document.removeEventListener('touchend', this.handleTouchEnd);
+  }
 
   componentDidUpdate(prevProps) {
     const { pathname } = this.props.location;
     if (pathname !== prevProps.location.pathname) {
-      const enterAnimation = routeAnimations[pathname].enter;
-      const exitAnimation = routeAnimations[prevProps.location.pathname].exit;
+      const enterAnimation = routes[pathname].enterAnimation;
+      const exitAnimation = routes[prevProps.location.pathname].exitAnimation;
 
       this.setState({
         enteringComponent: this.props.children,
         currentComponent: prevProps.children,
         enterAnimation,
         exitAnimation,
+        translation: 0,
+        initialX: null,
       }, () => this.setState({ animating: true }));
     }
   }
@@ -47,9 +69,31 @@ export class AnimatedSwitch extends Component {
       currentComponent: state.enteringComponent,
       enteringComponent: null,
       enterAnimation: null,
-      exitAnimation: routeAnimations[this.props.location.pathname].exit,
+      exitAnimation: routes[this.props.location.pathname].exitAnimation,
     }))
   );
+
+  handleTouchStart = (event) => {
+    console.log('TOUCH START...')
+    this.setState({ initialX: event.touches[0].pageX });
+  }
+
+  handleTouchMove = (event) => {
+    if (!this.state.initialX) return false;
+    const translation = event.touches[0].pageX - this.state.initialX;
+    const currentRoute = routes[this.props.location.pathname];
+    if (Math.abs(translation) < 50) return false;
+
+    if (translation < -150 && currentRoute.rightRoute) {
+      return this.props.history.push(currentRoute.rightRoute);
+    } else if (translation > 150 && currentRoute.leftRoute) {
+      return this.props.history.push(currentRoute.leftRoute);
+    }
+
+    return this.setState({ translation });
+  }
+
+  handleTouchEnd = () => this.setState({ translation: 0 });
 
   render() {
     return (
@@ -57,6 +101,7 @@ export class AnimatedSwitch extends Component {
         <CurrentComponent
           animating={this.state.animating}
           animation={this.state.exitAnimation}
+          translation={this.state.translation}
         >
           {this.state.currentComponent}
         </CurrentComponent>

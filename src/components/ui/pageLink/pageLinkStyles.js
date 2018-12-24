@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { SITE_WIDTH } from '../../../constants';
+import { COLORS } from '../../../constants';
 
 export const Container = styled.div`
   position: absolute;
@@ -25,7 +25,7 @@ export const Container = styled.div`
 `;
 
 export const StyledPageLink = styled(Link)`
-  border-bottom: 2px solid #fb1;
+  border-bottom: 2px solid ${COLORS.YELLOW};
   pointer-events: all;
   user-select: none;
   font-weight: 600;
@@ -33,10 +33,34 @@ export const StyledPageLink = styled(Link)`
   ${({ left }) => left ? `
     padding-left: 25px;
     transform: translateX(calc(-100% - 50px));
+
+    @media (max-width: 980px) {
+      font-size: 0px;
+      position: relative;
+      padding-left: 10px;
+      transform: translateX(calc(-100% - 25px));
+
+      &:after {
+        content: '<';
+        font-size: 14px;
+      }
+    }
   ` : null}
 
   ${({ right }) => right ? `
     padding-right: 25px;
     transform: translateX(calc(100% + 50px));
+
+    @media (max-width: 980px) {
+      font-size: 0px;
+      position: relative;
+      padding-right: 10px;
+      transform: translateX(calc(100% + 25px));
+
+      &:after {
+        content: '>';
+        font-size: 14px;
+      }
+    }
   ` : null}
 `;

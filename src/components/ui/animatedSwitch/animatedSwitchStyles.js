@@ -4,10 +4,11 @@ import { SITE_WIDTH } from '../../../constants'
 
 export const CurrentComponent = styled.div`
   pointer-events: none;
+  position: relative;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  transition: left 0.3s ease-out;
+  left: ${({ translation }) => translation}px;
+  right: ${({ translation }) => !translation && '0'}px;
 
   ${({ animation }) => {
     if (animation === 'fadeOut') {

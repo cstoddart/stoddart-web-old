@@ -10,6 +10,6 @@ import {
 
 export const Footer = () => (
   <StyledFooter>
-    Made In <TexasIcon src={texas} /> | View Source <GithubIcon src={github} />
+    <a href="https://www.google.com/search?q=texas" target="blank">Made In <TexasIcon src={texas} /></a> | <a href="https://github.com/cstoddart/portfolio" target="blank">View Source <GithubIcon src={github} /></a>
   </StyledFooter>
 );

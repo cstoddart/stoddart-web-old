@@ -4,26 +4,27 @@ import { StyledButton } from './buttonStyles';
 
 export class Button extends Component {
   state = {
-    text: this.props.children,
+    children: this.props.children,
   };
 
   handleMouseOver = () => {
-    this.setState({ text: this.props.hoverText})
+    this.setState({ children: this.props.hoverRender })
   }
 
   handleMouseOut = () => {
-    this.setState({ text: this.props.children })
+    this.setState({ children: this.props.children })
   }
 
   render() {
     const {
-      children,
       to,
       primary,
       secondary,
       reverse,
       width,
-      hoverText,
+      hoverRender,
+      hoverWidth,
+      disableTextOnMobile,
     } = this.props;
 
     return (
@@ -33,10 +34,12 @@ export class Button extends Component {
         secondary={secondary ? 1 : 0}
         reverse={reverse ? 1 : 0}
         width={width}
-        onMouseOver={hoverText ? this.handleMouseOver : null}
-        onMouseOut={hoverText ? this.handleMouseOut : null}
+        hoverWidth={hoverWidth}
+        onMouseOver={hoverRender ? this.handleMouseOver : null}
+        onMouseOut={hoverRender ? this.handleMouseOut : null}
+        disableTextOnMobile={disableTextOnMobile ? 1 : 0}
       >
-        {this.state.text}
+        {this.state.children}
       </StyledButton>
     );
   }

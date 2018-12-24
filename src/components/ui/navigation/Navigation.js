@@ -1,20 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Fragment } from 'react';
 
+import phone from '../../../assets/images/phone.svg';
+import phoneWhite from '../../../assets/images/phoneWhite.svg';
 import { Logo, Button } from '../';
 import {
   StyledNavigation,
+  PhoneIcon,
 } from './navigationStyles';
 
 export const Navigation = () => (
   <StyledNavigation>
     <Logo width={175} />
     <Button
+      width={105}
+      hoverWidth={140}
       to="/services"
-      width={100}
-      hoverText="If you want to reach me"
+      hoverRender={(
+        <Fragment>
+          <div>If you want to reach me</div><PhoneIcon src={phoneWhite} />
+        </Fragment>
+      )}
       primary
       reverse
-    >Call me,<br />beep me</Button>
+      disableTextOnMobile
+    ><div>Call me,<br />beep me</div><PhoneIcon src={phone} /></Button>
   </StyledNavigation>
 )

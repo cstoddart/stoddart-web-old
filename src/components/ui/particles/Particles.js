@@ -14,21 +14,22 @@ const primaryParams = {
     line_linked: {
       enable: true,
       distance: 90,
-      opacity: 0.25,
+      opacity: 0.5,
     },
     move: {
       direction: 'right',
       random: false,
       straight: true,
-      speed: 0.3,
+      speed: 0.1,
       bounce: false,
       out_mode: 'out',
     },
     size: {
-      value: 1.5,
+      value: 1.75,
       random: true,
     },
     opacity: {
+      value: 2,
       anim: {
         enable: true,
         speed: 1,
@@ -54,7 +55,7 @@ const primaryParams = {
       grab: {
         distance: 75,
         line_linked: {
-          opacity: 0.5,
+          opacity: 1,
         }
       },
     },
@@ -78,19 +79,19 @@ const secondaryParams = {
       direction: 'right',
       random: false,
       straight: true,
-      speed: 0.3,
+      speed: 0.2,
       bounce: false,
       out_mode: 'out',
     },
     size: {
-      value: 1,
+      value: 1.25,
       random: true,
     },
     opacity: {
       anim: {
         enable: true,
         speed: 1,
-        opacity_min: 0.05,
+        opacity_min: 0.15,
       },
     },
   },

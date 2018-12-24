@@ -15,3 +15,14 @@ export const StyledNavigation = styled.div`
   pointer-events: none;
   height: 50px;
 `;
+
+export const PhoneIcon = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  pointer-events: none;
+
+  @media (max-width: 980px) {
+    margin-left: 0px;
+  }
+`;

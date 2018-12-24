@@ -11,20 +11,21 @@ import {
   Footer,
 } from './components/ui';
 import {
+  AppContainer,
   GlobalStyles,
   AppContent,
 } from './appStyles';
 
 export const App = () => (
-  <Fragment>
+  <AppContainer>
     <GlobalStyles />
     <Particles />
     <BrowserRouter>
       <Fragment>
         <Navigation />
         <AppContent>
-          <Route render={({ location }) => (
-            <AnimatedSwitch location={location}>
+          <Route render={({ location, history }) => (
+            <AnimatedSwitch location={location} history={history}>
               <Switch location={location}>
                 <Route exact path="/" component={Home} />
                 <Route path="/projects" component={Projects} />
@@ -36,5 +37,5 @@ export const App = () => (
         <Footer />
       </Fragment>
     </BrowserRouter>
-  </Fragment>
+  </AppContainer>
 );

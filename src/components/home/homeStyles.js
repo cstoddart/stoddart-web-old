@@ -6,22 +6,14 @@ export const Container = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  width: 65%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
 
-export const Title = styled.h1`
-  font-size: 28px;
-  pointer-events: all;
-  margin-bottom: 50px;
-  font-weight: 700;
-
-  strong {
-    color: #fb1;
-    display: block;
-    font-size: 40px;
-    line-height: 1;
+  @media (max-width: 980px) {
+    position: static;
   }
 `;
 
@@ -32,4 +24,18 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+`;
+
+export const Title = styled.h1`
+  font-size: 28px;
+  pointer-events: all;
+  font-weight: 700;
+`;
+
+export const PlusSign = styled.h1`
+  color: #fb1;
+  display: block;
+  font-size: 40px;
+  pointer-events: all;
+  line-height: 1;
 `;

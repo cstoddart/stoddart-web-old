@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import Particles from 'react-particles-js';
 
-import { SITE_WIDTH } from './constants';
+import { COLORS, SITE_WIDTH } from './constants';
 import bitterBold from './assets/fonts/bitterBold.ttf';
 import montserratMedium from './assets/fonts/montserratMedium.ttf';
 import montserratSemiBold from './assets/fonts/montserratSemiBold.ttf';
@@ -31,16 +31,19 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
-    background-color: #222;
+    background-color: ${COLORS.BLUE_DARK};
     font-size: 16px;
     font-family: Montserrat;
     font-weight: 500;
     color: white;
+    letter-spacing: 0.5px;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   a {
     text-decoration: none;
-    color: #fb1;
+    color: ${COLORS.YELLOW};
     pointer-events: all;
   }
 
@@ -48,6 +51,13 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-weight: 600;
   }
+`;
+
+export const AppContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
 `;
 
 export const AppContent = styled.div`
