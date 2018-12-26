@@ -74,7 +74,6 @@ export class AnimatedSwitch extends Component {
   );
 
   handleTouchStart = (event) => {
-    console.log('TOUCH START...')
     this.setState({ initialX: event.touches[0].pageX });
   }
 
@@ -84,9 +83,9 @@ export class AnimatedSwitch extends Component {
     const currentRoute = routes[this.props.location.pathname];
     if (Math.abs(translation) < 50) return false;
 
-    if (translation < -150 && currentRoute.rightRoute) {
+    if (translation < -100 && currentRoute.rightRoute) {
       return this.props.history.push(currentRoute.rightRoute);
-    } else if (translation > 150 && currentRoute.leftRoute) {
+    } else if (translation > 100 && currentRoute.leftRoute) {
       return this.props.history.push(currentRoute.leftRoute);
     }
 

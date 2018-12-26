@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { Container, StyledPageLink } from './pageLinkStyles';
+import {
+  Container,
+  StyledPageLink,
+  Content,
+} from './pageLinkStyles';
 
 class PageLinkClass extends Component {
   componentDidMount() {
@@ -22,17 +26,18 @@ class PageLinkClass extends Component {
   }
 
   render() {
+    const left = this.props.left ? 1 : 0;
+    const right = this.props.right ? 1 : 0;
     return (
-      <Container
-        left={this.props.left ? 1 : 0}
-        right={this.props.right ? 1 : 0}
-      >
+      <Container left={left} right={right}>
         <StyledPageLink
           to={this.props.to}
-          left={this.props.left ? 1 : 0}
-          right={this.props.right ? 1 : 0}
+          left={left}
+          right={right}
         >
-          {this.props.children}
+          <Content left={left} right={right}>
+            {this.props.children}
+          </Content>
         </StyledPageLink>
       </Container>
     );

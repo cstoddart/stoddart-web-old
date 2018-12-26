@@ -25,20 +25,39 @@ export const Container = styled.div`
 `;
 
 export const StyledPageLink = styled(Link)`
-  border-bottom: 2px solid ${COLORS.YELLOW};
   pointer-events: all;
+
+  ${({ left }) => left ? `
+    transform: translateX(calc(-100% - 50px));
+
+    @media (max-width: 980px) {
+      padding: 25px 10px;
+      transform: translateX(calc(-100% - 15px));
+    }
+  ` : null}
+
+  ${({ right }) => right ? `
+    transform: translateX(calc(100% + 50px));
+
+    @media (max-width: 980px) {
+      padding: 25px 10px;
+      transform: translateX(calc(100% + 15px));
+    }
+  ` : null}
+`;
+
+export const Content = styled.span`
+  display: inline-block;
+  border-bottom: 2px solid ${COLORS.YELLOW};
   user-select: none;
   font-weight: 600;
 
   ${({ left }) => left ? `
     padding-left: 25px;
-    transform: translateX(calc(-100% - 50px));
 
     @media (max-width: 980px) {
       font-size: 0px;
-      position: relative;
       padding-left: 10px;
-      transform: translateX(calc(-100% - 25px));
 
       &:after {
         content: '<';
@@ -49,15 +68,12 @@ export const StyledPageLink = styled(Link)`
 
   ${({ right }) => right ? `
     padding-right: 25px;
-    transform: translateX(calc(100% + 50px));
 
     @media (max-width: 980px) {
       font-size: 0px;
-      position: relative;
       padding-right: 10px;
-      transform: translateX(calc(100% + 25px));
 
-      &:after {
+      &:before {
         content: '>';
         font-size: 14px;
       }

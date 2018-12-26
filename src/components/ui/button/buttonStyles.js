@@ -64,8 +64,4 @@ export const StyledButton = styled(Link)`
       }
     }
   ` : null}
-
-  & + & {
-    margin-left: 25px;
-  }
 `;

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { SITE_WIDTH } from '../../../constants'
-
 export const CurrentComponent = styled.div`
   pointer-events: none;
   position: relative;
@@ -9,6 +7,7 @@ export const CurrentComponent = styled.div`
   transition: left 0.3s ease-out;
   left: ${({ translation }) => translation}px;
   right: ${({ translation }) => !translation && '0'}px;
+  bottom: 0;
 
   ${({ animation }) => {
     if (animation === 'fadeOut') {

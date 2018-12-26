@@ -1,64 +1,64 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from "react";
 
-import { StyledParticles } from './particlesStyles';
+import { StyledParticles } from "./particlesStyles";
 
 const primaryParams = {
   particles: {
     number: {
-      value: 12,
+      value: 10,
       density: {
         enable: true,
-        value_area: 100,
+        value_area: 100
       }
     },
     line_linked: {
       enable: true,
       distance: 90,
-      opacity: 0.5,
+      opacity: 0.5
     },
     move: {
-      direction: 'right',
+      direction: "right",
       random: false,
       straight: true,
       speed: 0.1,
       bounce: false,
-      out_mode: 'out',
+      out_mode: "out"
     },
     size: {
       value: 1.75,
-      random: true,
+      random: true
     },
     opacity: {
       value: 2,
       anim: {
         enable: true,
         speed: 1,
-        opacity_min: 0.05,
-      },
-    },
+        opacity_min: 0.05
+      }
+    }
   },
   interactivity: {
     events: {
       onclick: {
         enable: true,
-        mode: 'push',
+        mode: "push"
       },
       onhover: {
         enable: true,
-        mode: 'grab',
+        mode: "grab"
       }
     },
     modes: {
       push: {
-        particles_nb: 1,
+        particles_nb: 1
       },
       grab: {
         distance: 75,
         line_linked: {
-          opacity: 1,
+          opacity: 1
         }
-      },
-    },
+      }
+    }
   },
   retina_detect: true
 };
@@ -66,34 +66,34 @@ const primaryParams = {
 const secondaryParams = {
   particles: {
     number: {
-      value: 50,
+      value: 75,
       density: {
         enable: true,
-        value_area: 100,
+        value_area: 100
       }
     },
     line_linked: {
-      enable: false,
+      enable: false
     },
     move: {
-      direction: 'right',
+      direction: "right",
       random: false,
       straight: true,
       speed: 0.2,
       bounce: false,
-      out_mode: 'out',
+      out_mode: "out"
     },
     size: {
       value: 1.25,
-      random: true,
+      random: true
     },
     opacity: {
       anim: {
         enable: true,
         speed: 1,
-        opacity_min: 0.15,
-      },
-    },
+        opacity_min: 0.15
+      }
+    }
   },
   retina_detect: true
 };

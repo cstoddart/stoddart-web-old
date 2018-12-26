@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { StyledButton } from './buttonStyles';
 
+export { StyledButton };
+
 export class Button extends Component {
   state = {
     children: this.props.children,

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import {
   PageContainer,
   PageLink,
-  Row,
   Button,
 } from '../ui';
 import {
@@ -11,6 +10,7 @@ import {
   Content,
   Title,
   PlusSign,
+  NavigationRow,
 } from './homeStyles';
 
 export class Home extends Component {
@@ -23,12 +23,10 @@ export class Home extends Component {
             <Title>Bulletproof software engineering</Title>
             <PlusSign>+</PlusSign>
             <Title>squeaky clean design</Title>
-            <Row
-              marginTop={50}
-            >
+            <NavigationRow>
               <Button to="/projects" secondary>Check out what I've done</Button>
               <Button to="/services" primary>See what I can do for you</Button>
-            </Row>
+            </NavigationRow>
           </Content>
         </Container>
         <PageLink to='/services' right>Services</PageLink>
