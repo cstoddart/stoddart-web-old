@@ -8,4 +8,5 @@ export { PageContent } from './pageContent/PageContent';
 export { PageLink } from './pageLink/PageLink';
 export { PageTitle } from './pageTitle/PageTitle';
 export { Particles } from './particles/Particles';
+export { PhoneIcon } from './phoneIcon/PhoneIcon';
 export { Row } from './row/Row';

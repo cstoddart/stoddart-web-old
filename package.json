@@ -2,7 +2,7 @@
   "name": "stoddart-web-engineering",
   "description": "",
   "scripts": {
-    "start": "webpack-dev-server --mode=development --port 8080",
+    "start": "webpack-dev-server --mode=development --port 3000 --host 0.0.0.0",
     "build": "webpack --mode=production"
   },
   "dependencies": {

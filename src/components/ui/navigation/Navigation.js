@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react';
+import React, { memo, Fragment } from 'react';
 
 import phone from '../../../assets/images/phone.svg';
 import phoneWhite from '../../../assets/images/phoneWhite.svg';
-import { Logo, Button } from '../';
+import { Logo, Button, PhoneIcon } from '../';
 import {
   StyledNavigation,
-  PhoneIcon,
 } from './navigationStyles';
 
-export const Navigation = () => (
+export const Navigation = memo(() => (
   <StyledNavigation>
     <Logo width={175} />
     <Button
@@ -17,12 +16,12 @@ export const Navigation = () => (
       to="/services"
       hoverRender={(
         <Fragment>
-          <div>If you want to reach me</div><PhoneIcon src={phoneWhite} />
+          <div>If you want to reach me</div><PhoneIcon width={20} color="#fff" />
         </Fragment>
       )}
       primary
       reverse
       disableTextOnMobile
-    ><div>Call me,<br />beep me</div><PhoneIcon src={phone} /></Button>
+    ><div>Call me,<br />beep me</div><PhoneIcon width={20} /></Button>
   </StyledNavigation>
-)
+))

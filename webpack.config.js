@@ -8,9 +8,10 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: './build',
     hot: true,
     disableHostCheck: true,
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -21,7 +22,7 @@ module.exports = {
   ],
   output: {
     filename: 'bundle.[hash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
   },
   module: {
     rules: [
