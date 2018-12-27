@@ -26,7 +26,6 @@ export class Button extends Component {
       width,
       hoverRender,
       hoverWidth,
-      disableTextOnMobile,
     } = this.props;
 
     return (
@@ -39,7 +38,6 @@ export class Button extends Component {
         hoverWidth={hoverWidth}
         onMouseOver={hoverRender ? this.handleMouseOver : null}
         onMouseOut={hoverRender ? this.handleMouseOut : null}
-        disableTextOnMobile={disableTextOnMobile ? 1 : 0}
       >
         {this.state.children}
       </StyledButton>

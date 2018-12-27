@@ -18,7 +18,7 @@ export const StyledButton = styled(Link)`
   max-width: ${({ width }) => !width && '125px'};
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: transparent;
 
   ${({ primary }) => primary ? `
@@ -50,18 +50,11 @@ export const StyledButton = styled(Link)`
     }
   ` : null}
 
-  ${({ disableTextOnMobile }) => disableTextOnMobile ? `
-    @media (max-width: 980px) {
-      font-size: 0px;
+  @media (max-width: 980px) {
+    width: auto;
+
+    &:hover {
       width: auto;
-
-      div {
-        width: 0;
-      }
-
-      &:hover {
-        width: auto;
-      }
     }
-  ` : null}
+  }
 `;

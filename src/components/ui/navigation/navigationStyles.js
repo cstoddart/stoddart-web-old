@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { SITE_WIDTH } from '../../../constants';
+import { PhoneIcon as Phone } from '../phoneIcon/PhoneIcon';
 
 export const StyledNavigation = styled.div`
   display: flex;
@@ -16,13 +17,11 @@ export const StyledNavigation = styled.div`
   height: 50px;
 `;
 
-export const PhoneIcon = styled.img`
-  width: 20px;
-  height: 20px;
-  margin-left: 15px;
-  pointer-events: none;
+export const ButtonText = styled.div`
+  margin-right: 15px;
 
   @media (max-width: 980px) {
-    margin-left: 0px;
+    margin: 0;
+    display: none;
   }
 `;
